@@ -1,0 +1,13 @@
+"Reproduction for target-determinator#81"
+
+module(name = "td-issue-81-repro")
+
+bazel_dep(name = "rules_oci", version = "1.7.5")
+
+oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
+oci.pull(
+    name = "ubuntu",
+    digest = "sha256:2af372c1e2645779643284c7dc38775e3dbbc417b2d784a27c5a9eb784014fb8",
+    image = "ubuntu",
+)
+use_repo(oci, "ubuntu")
