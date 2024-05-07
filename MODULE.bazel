@@ -7,7 +7,7 @@ bazel_dep(name = "rules_oci", version = "1.7.5")
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
     name = "ubuntu",
-    digest = "sha256:2af372c1e2645779643284c7dc38775e3dbbc417b2d784a27c5a9eb784014fb8",
+    digest = "sha256:d21429c4635332e96a4baae3169e3f02ac8e24e6ae3d89a86002d49a1259a4f7",
     image = "ubuntu",
 )
 use_repo(oci, "ubuntu")
